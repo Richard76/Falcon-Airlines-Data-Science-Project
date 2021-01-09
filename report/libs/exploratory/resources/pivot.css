@@ -1,0 +1,370 @@
+/* pivot */
+/* Make this css compatible because it needs to be embedded in server side and note. */
+/* Also, please do not use scss variables. */
+
+.pivot-view {
+  margin-top:0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-right: 5px solid transparent; /* margin-right somehow doesn't work with width:100% */
+  font-size:14px;
+  background-color: #fff;
+  position:relative;
+  padding-top:27px;
+  line-height: 1.4em;
+}
+
+.pivot-col-header-view {
+  width: 100%;
+  height: 29px;
+  border-right: 5px solid transparent; /* margin-right somehow doesn't work with width:100% */
+  font-size:14px;
+  background-color: #fff;
+  position: absolute;
+  left:0;
+  top:0;
+  overflow-x: hidden; 
+  overflow-y: hidden;
+}
+
+.pivot-body-view {
+  width: 100%;
+  height: 100%; /*calc( 100% - 28px );*/
+  overflow: auto;
+  border-right: 5px solid transparent; /* margin-right somehow doesn't work with width:100% */
+  font-size:14px;
+  background-color: #fff;
+  position:relative;
+}  
+
+
+.pivot-table-frame {
+  display:table;
+}
+.pivot-table-frame .pivot-row {
+  display:table-row;
+}
+.pivot-table-frame .pivot-row .pivot-cell {
+  display:table-cell;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell {
+  /* border-right: 1px solid #dfdfdf;*/
+  /* border-bottom: 1px solid #dfdfdf;*/
+  background-color: #fff;
+  padding: 4px 10px;
+  min-width: 60px;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align:right;
+  white-space: nowrap;
+  font-family: 'Helvetica Neue', Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴシック","Hiragino Sans", "Hiragino Kaku Gothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.pivot-view.allow-multiple-lines .pivot-table-frame .pivot-row .pivot-cell {
+  text-overflow: inherit;
+  white-space: normal;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.text-col {
+  text-align:left; 
+}
+
+
+.pivot-view .pivot-table-frame .pivot-row.banded:nth-of-type(2n+1) .pivot-cell{
+  background-color:#fafafa;
+}
+
+
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell:first-of-type {
+  /* border-left: 1px solid #dfdfdf;*/
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.header {
+  /* background-color: #f0f0f0;*/
+  text-align:right; /* same alignment as measure numbers*/
+  font-weight: bold;
+  /* max-width: 150px;*/
+  background-color: #fff;
+  border-bottom: 1px solid #cfcfcf;
+  /* font-family:Georgia, Palatino, serif;*/
+}
+
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.total {
+  text-align:right; 
+  font-weight: bold;
+  background-color: #fff;
+  border-top: 1px solid #cfcfcf;
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.total.text-col {
+  text-align:left; 
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-total{
+  border-top: 0px;
+  font-weight: bold;
+  text-align:right; 
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-total.text-col{
+  text-align:left; 
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.subtotal {
+  font-weight: bold;
+}
+
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header {
+  text-align:left; 
+  padding-right:20px;
+  max-width: 250px;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header.wrap {
+  white-space:initial;
+  min-width:250px; /* set the same value with max-width above to make it fix size */ 
+  padding-right:5px;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header.wrap-responsive-width {
+  white-space:initial;
+  padding-right:5px;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.header.col-header {
+  cursor:pointer;
+  position:relative;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.header.col-header.with-sort > .pivot-cell-text > i{
+  position:absolute;
+  top: 8px;
+  right: 0;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.header.col-header.text-col,
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.header.row-header.text-col {
+  text-align:left; 
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header.no-bottom-border {
+  border-bottom:0px solid white;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header.bottom-border {
+  border-bottom:1px solid #dfdfdf;
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.bottom-border {
+  border-bottom:1px solid #dfdfdf;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.header.row-header {
+  text-align:left; 
+  max-width: 250px;
+}
+
+/* table case */
+.pivot-view.type-table .pivot-table-frame .pivot-row .pivot-cell {
+  /* text-align:left; */ 
+  max-width: 400px;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header.grouped {
+  background-color:#fff; 
+}
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell.row-header.thick {
+  font-weight:bold; 
+}
+
+
+.pivot-view .pivot-table-frame .pivot-row:first-of-type .pivot-cell {
+  /* border-top: 1px solid #dfdfdf;*/
+  text-align:right;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell a ,
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell a:hover,
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell a:active,
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell a:focus {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.pivot-view .pivot-table-frame .pivot-row .pivot-cell a.no-text-deco {
+  text-decoration: none;
+}
+
+/* Highilght by click */
+.pivot-view .pivot-table-frame .pivot-row.selected .pivot-cell{
+  background-color:#eee!important;
+}
+
+.pivot-metainfo {
+  height:18px;
+  font-size: 12px;
+  color: #999;
+  font-family: 'Helvetica Neue', Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴシック","Hiragino Sans", "Hiragino Kaku Gothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  padding-left:11px;
+  background-color: #fff;
+}
+.pivot-metainfo.hidden {
+  display:none;
+}
+
+.pivot-title {
+  height: 33px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #4d4d4d;
+  font-family: 'Helvetica Neue', Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴシック","Hiragino Sans", "Hiragino Kaku Gothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  background-color: #fff;
+  margin-bottom:6px;
+
+}    
+.pivot-title.hidden {
+  display: none;
+}
+
+.pivot-col-title {
+  height: 20px;
+  font-size:14px;
+  padding-left:10px;
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #4d4d4d;
+  font-family: 'Helvetica Neue', Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴシック","Hiragino Sans", "Hiragino Kaku Gothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  background-color: #fff;
+}    
+.pivot-col-title.hidden {
+  display: none;
+}
+
+
+
+.pivot-table-frame.pivot-data-popover .pivot-row .pivot-cell {
+}
+.pivot-table-frame.pivot-data-popover  .pivot-row .pivot-cell.value-cell {
+  color: #111;
+  font-weight:bold;
+  
+}
+
+.pivot-balloon-style {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 10px 8px;
+  font-size: 14px;
+  font-weight: normal;
+  background-color: #fff;
+  color: #555;
+  box-shadow: 2px 2px 1px #ddd;
+  z-index: 1050; /* VizPreviewDialog uses 1040 so it should be bigger than that. */
+  white-space: pre-wrap; /* Show newlines as newlines */
+}
+
+
+.pivot-col-header-view .pivot-cell.header .pivot-cell-text {
+  text-overflow: ellipsis;
+  overflow:hidden;
+  width: 100%;
+}
+
+.pivot-col-header-view .icon-sort-direction-desc {
+  /* Down caret from FA4 */
+  display: inline-block;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgd2lkdGg9IjAuOGVtIiBoZWlnaHQ9IjFlbSIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMjgwIj48cGF0aCBkPSJNMTAyNCA0NDhxMCAyNi0xOSA0NUw1NTcgOTQxcS0xOSAxOS00NSAxOXQtNDUtMTlMMTkgNDkzUTAgNDc0IDAgNDQ4dDE5LTQ1dDQ1LTE5aDg5NnEyNiAwIDQ1IDE5dDE5IDQ1eiIgZmlsbD0iIzRkNGQ0ZCIvPjwvc3ZnPg==');
+  background-size: 9px;
+  width: 9px;
+  height: 9px;
+}
+
+.pivot-col-header-view .icon-sort-direction-asc {
+  /* Up caret from FA4 */
+  display: inline-block;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgd2lkdGg9IjAuOGVtIiBoZWlnaHQ9IjFlbSIgc3R5bGU9Ii1tcy10cmFuc2Zvcm06IHJvdGF0ZSgzNjBkZWcpOyAtd2Via2l0LXRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2aWV3Qm94PSIwIDAgMTAyNCAxMjgwIj48cGF0aCBkPSJNMTAyNCA5NjBxMCAyNi0xOSA0NXQtNDUgMTlINjRxLTI2IDAtNDUtMTlUMCA5NjB0MTktNDVsNDQ4LTQ0OHExOS0xOSA0NS0xOXQ0NSAxOWw0NDggNDQ4cTE5IDE5IDE5IDQ1eiIgZmlsbD0iIzRkNGQ0ZCIvPjwvc3ZnPg==');
+  background-size: 9px;
+  width: 9px;
+  height: 9px;
+}
+
+/* Hide table header belongs to the table body view. */
+.pivot-view .pivot-table-frame.pivot-table-body-frame {
+  margin-top: -10px;
+}
+
+.pivot-view .pivot-table-frame.pivot-table-body-frame .pivot-row .pivot-cell.header.col-header {
+  border-bottom-color: transparent;
+}
+
+/* Set 100% height to avoid unnecessary space between header and body. */
+.pivot-view .pivot-table-frame.pivot-table-col-header-frame {
+  height: 100%;
+}
+
+
+.pivot-body-view .pivot-cell.header.col-header, .pivot-body-view .pivot-cell.header.row-header {
+  /* It is impossible to make this hidden table header area zero-height 
+     if there is text in this area. We make it to 10px here, and 
+     we set -10px top margin to adjust.  */
+  height: 10px!important;
+  overflow:hidden;
+  padding-top:0px;
+  padding-bottom:0px;
+  line-height:0px;
+}
+.pivot-body-view .pivot-cell.header.col-header .pivot-cell-text, .pivot-body-view .pivot-cell.header.row-header .pivot-cell-text {
+  /* It is impossible to make this hidden table header area zero-height 
+     if there is text in this area. We make it to 10px here, and 
+     we set -10px top margin to adjust.  */
+  height: 10px!important;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 100%;
+}
+
+.single-value-box {
+  width:100%;
+  position:relative;
+  display: table;
+}
+
+.single-value-box .single-value-innerbox {
+  border-radius:2px;
+  font-family: "Helvetica Neue", Arial, Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴシック","Hiragino Sans", "Hiragino Kaku Gothic", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  display:table-cell;
+  vertical-align:middle;
+
+}
+.single-value-box .single-value-innerbox .single-value-text {
+  font-size:38px;
+  line-height:1.2em;
+  font-weight:bold;
+  margin-bottom:1px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.single-value-box .single-value-innerbox .single-value-caption {
+  font-size:15px;
+  line-height:1.3em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.single-value-box .single-value-icon{
+  position:absolute;
+  top:25px;
+  right:25px;
+  font-size:80px;
+  color:rgba(0, 0, 0, 0.15);
+}

@@ -26,10 +26,10 @@
 <script src="libs/navigation-1.1/codefolding.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
 <meta name="format-detection" content="telephone=no" />
-<script src="libs/exploratory/resources/jquery.min.js?cb=cb1610157013274"></script>
-<script src="libs/exploratory/resources/d3.min.js?cb=cb1610157013274"></script>
-<script src="libs/exploratory/resources/chroma.min.js?cb=cb1610157013274"></script>
-<script src="libs/exploratory/resources/viz.min.js?cb=cb1610157013274"></script>
+<script src="libs/exploratory/resources/jquery.min.js?cb=cb1610228676751"></script>
+<script src="libs/exploratory/resources/d3.min.js?cb=cb1610228676751"></script>
+<script src="libs/exploratory/resources/chroma.min.js?cb=cb1610228676751"></script>
+<script src="libs/exploratory/resources/viz.min.js?cb=cb1610228676751"></script>
 <style  type="text/css">
   /* R output adjustment */
   .viz-container img.r-output {
@@ -40,13 +40,49 @@
     left: initial!IMPORTANT;
   }
 </style>
-<script src="libs/exploratory/resources/plotly.min.js?cb=cb1610157013274"></script>
-<script src="libs/exploratory/resources/plotly-locale-ja.js?cb=cb1610157013274"></script>
-<link href="libs/exploratory/resources/plotly-custom.css?cb=cb1610157013274" rel="stylesheet"></link>
-<script src="libs/exploratory/analytics/iYR7nQv1.js"></script>
-<script src="libs/exploratory/analytics/dcD5cRP4.js"></script>
-<script src="libs/exploratory/analytics/OxO8GRW2.js"></script>
-<script src="libs/exploratory/layout/LPA4TgP8.js"></script>
+<script src="libs/exploratory/resources/plotly.min.js?cb=cb1610228676751"></script>
+<script src="libs/exploratory/resources/plotly-locale-ja.js?cb=cb1610228676751"></script>
+<link href="libs/exploratory/resources/plotly-custom.css?cb=cb1610228676751" rel="stylesheet"></link>
+<link href="libs/exploratory/resources/pivot.css?cb=cb1610228676751" rel="stylesheet"></link>
+<script src="libs/exploratory/resources/jquery.balloon.min.js?cb=cb1610228676751"></script>
+
+<style  type="text/css">
+  /* pivot adjustment */
+  .pivot-metainfo {
+    display:none;
+  }
+  .viz-container {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+<script src="libs/exploratory/layout/Bch0Pfe7.js"></script>
+<script src="libs/exploratory/layout/bBD4NEr2.js"></script>
+<script src="libs/exploratory/layout/yrw8igc4.js"></script>
+<script src="libs/exploratory/layout/nsg8jpu3.js"></script>
+<script src="libs/exploratory/layout/Zzo1mQY3.js"></script>
+<script src="libs/exploratory/layout/YPe3lRG1.js"></script>
+<script src="libs/exploratory/layout/dre4zXs6.js"></script>
+<script src="libs/exploratory/layout/JbK2CxB9.js"></script>
+<script src="libs/exploratory/layout/HBi2JPr4.js"></script>
+<script src="libs/exploratory/layout/gJP2UEQ6.js"></script>
+<script src="libs/exploratory/layout/KPf0fxr0.js"></script>
+<script src="libs/exploratory/layout/KHG1hGM3.js"></script>
+<script src="libs/exploratory/layout/lVK1fRJ4.js"></script>
+<script src="libs/exploratory/layout/JrV2htm5.js"></script>
+<script src="libs/exploratory/layout/oxK7kYZ3.js"></script>
+<script src="libs/exploratory/layout/SHn2Gqd6.js"></script>
+<script src="libs/exploratory/layout/lcm8sIU3.js"></script>
+<script src="libs/exploratory/layout/XWJ6uiV8.js"></script>
+<script src="libs/exploratory/layout/wQI8QCa1.js"></script>
+<script src="libs/exploratory/layout/Axm6Rfy9.js"></script>
+<script src="libs/exploratory/layout/whJ2xDH8.js"></script>
+<script src="libs/exploratory/layout/OdL8SnD9.js"></script>
+<script src="libs/exploratory/analytics/Wdp6ATm6.js"></script>
+<script src="libs/exploratory/analytics/hkX3rQm6.js"></script>
+<script src="libs/exploratory/analytics/LGj4EMK7.js"></script>
+<script src="libs/exploratory/layout/IQo3CqC1.js"></script>
+<script src="libs/exploratory/analytics/GvX2SQK8.js"></script>
 
 
 
@@ -78,8 +114,8 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="libs/exploratory/resources/note-base.css?cb=20210109T015013235Z" type="text/css" />
-<link rel="stylesheet" href="libs/exploratory/resources/note-mobile.css?cb=20210109T015013235Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/note-base.css?cb=20210109T214436706Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/note-mobile.css?cb=20210109T214436706Z" type="text/css" />
 
 </head>
 
@@ -299,97 +335,283 @@ div.tocify {
 </div>
 
 
-<div id="richard-farr" class="section level1">
-<h1>Richard Farr</h1>
-</div>
-<div id="ut-austin" class="section level1">
-<h1>UT Austin</h1>
-</div>
-<div id="capstone-project---project-notes-2" class="section level1">
-<h1>Capstone Project - Project Notes 2</h1>
-<table>
-<tbody>
-<tr class="odd">
-<td>This report is just a summary of all the code manipulations done using the R programming language. The commented code will be submitted along with this report to review as needed</td>
-</tr>
-</tbody>
-</table>
-<div id="data-pre-processing-4" class="section level2">
-<h2>Data pre-processing (4)</h2>
-<div id="removal-of-unwanted-variables" class="section level3">
-<h3>Removal of unwanted variables</h3>
-<p>CustomerID was the only variable to be removed initially.</p>
-</div>
-<div id="missing-value-treatment" class="section level3">
-<h3>Missing Value Treatment</h3>
-<p>The variables Customer Type, Type Travel, Departure Arrival Time Convienent, Food_drink, and onboard service all had between about 8% and 10% missing values. As they are all factors variables, I converted the missing values to a new factor level called &quot;Unknown&quot;.</p>
-<p>The variable ArrivalDelay_Mins had about 284 or 0.31% missing values. Rather than just remove the missing values I created a new column called ArrivalDelay_NA and made it 1 if there was an NA there then replaced the NA's with 0 in the ArrivalDelayin_Mins colmn. It may turn out that a missing value here is a good predictor of satisfaction.</p>
-</div>
-<div id="outlier-treatment" class="section level3">
-<h3>Outlier treatment</h3>
-<p>Departure Delay in Mins and Arrival Delay in Mins both have outliers. The issue can be minimized by creating a new column by talking the log of each original column but I am keeping the original columns at least for a bit so I can use them for feature engineering before I delete them later.</p>
-</div>
-<div id="variable-transformation" class="section level3">
-<h3>Variable Transformation</h3>
-<p>Of the 4 numeric predictor variables 2 were normal and 2 were not normal.</p>
-<div id="predictor-variables-normality-test---histogram" class="section level4">
-<h4>Predictor Variables Normality Test - Histogram</h4>
-<script data-id="analytics_1" data-object-name="analytics_iYR7nQv1" data-viz="hist" data-analysis="iYR7nQv1" data-height="full" data-width="normal" data-fit="" ></script><div data-id="analytics_1" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
-<p>By taking the log of the 2 non normal ones, it doesn't actually make them normal but it does make them closer to normal.</p>
-</div>
-</div>
-<div id="does-log-make-them-normal---histogram" class="section level3">
-<h3>does log make them normal? - Histogram</h3>
-<script data-id="analytics_2" data-object-name="analytics_dcD5cRP4" data-viz="hist" data-analysis="dcD5cRP4" data-height="full" data-width="normal" data-fit="" ></script><div data-id="analytics_2" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
-<p>Something is better than nothing. They may or may not end up making it into the final model. Only time will tell.</p>
-</div>
-<div id="addition-of-new-variables" class="section level3">
-<h3>Addition of New variables</h3>
-<p>I created a new categorical variable called delay_summary with 4 levels based on leaving on time and arriving on time. The levels are ot (for on-time) and late so the 4 combinations are ot-ot, ot-late, late-ot, late-late. My prediction is that some combinations will perform better than others.</p>
+<p>Richard Farr</p>
+<p>Falcon Airlines Report</p>
+<p>January 9th, 2021</p>
 <hr />
+<div id="executive-summary" class="section level1">
+<h1>Executive Summary</h1>
+<div id="problem" class="section level2">
+<h2>Problem</h2>
+<p>Many of Falcon Airlines customers are not satisfied with Falcon Airlines. If things continue this way we will lose customers, lose market share, lose revenues, lose profits, and executives will eventually be let go and replaced with executives willing to tackle problems that boost the stock price.</p>
 </div>
-</div>
-<div id="exploratory-data-analysis-4" class="section level2">
-<h2>Exploratory Data Analysis (4)</h2>
-<div id="relationship-among-variables---correlations" class="section level3">
-<h3>Relationship among variables - Correlations</h3>
-<p>It seems like older people avoid longer flights</p>
-<p>Apart from that only departure delays and arrival delays seem correlated.</p>
-<script data-id="analytics_3" data-object-name="analytics_OxO8GRW2" data-viz="heatmap" data-analysis="OxO8GRW2" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_3" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
-<p>It seems like older people avoid longer flights and departure delays and arrival delays seem a little correlated which makes sense.</p>
-</div>
-<div id="important-variables-after-data-pre-processing" class="section level3">
-<h3>Important variables (after data pre-processing)</h3>
-<p>The top 4 most important variables appear to be</p>
+<div id="solution" class="section level2">
+<h2>Solution</h2>
+<p>Of the 4 possible data driven solutions:</p>
 <ol style="list-style-type: decimal">
-<li>Inflight Entertainment</li>
-<li>Seat Comfort</li>
-<li>Ease of Onboarding</li>
-<li>Online Support</li>
+<li>Do nothing and hope things improve</li>
+<li>Make changes to Falcon Airlines</li>
+<li>Attract new customers more likely to be happy with Falcon Airlines</li>
+<li>Do a combination of 3 and 4 above at the same time</li>
 </ol>
-<div class="figure">
-<img src="libs/exploratory/images/p1.png" />
-
-</div>
-</div>
-<div id="insightful-visualizations" class="section level3">
-<h3>Insightful visualizations</h3>
-<p>65% of women are satisfied while only about 45% of men are satisfied. It may be worthwile just targeting female customers going forward.. become the first airline for women by women.</p>
-</div>
-<div id="gender-satisfaction" class="section level3">
-<h3>Gender &amp; Satisfaction</h3>
-<script data-id="viz_4" data-object-name="viz_LPA4TgP8" data-viz="LPA4TgP8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_4" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>The data science team recommends a two phase solution.</p>
+<p>Phase 1: Make changes to Falcon Airlines in order to make our current customers happier (2)</p>
+<p>Phase 2: Change marketing in order to attract new customers that are more likely to be satisfied with Falcon airlines.</p>
+<p>We beleive that going after low hanging fruit first and generating momentum is better than biting off more than we can chew and failing.</p>
+<p>This report will focus our efforts on Phase 1 and specifically focus on the factors within our control to change in order to improve current customers satisfaction.</p>
+<p>The top 5 factors that we should improve in order to make our customers more satisfied are: 1. seating? 2.</p>
 <hr />
 </div>
 </div>
-<div id="analytical-approach-2" class="section level2">
-<h2>Analytical Approach (2)</h2>
-<div id="alternative-analytical-approaches-that-could-have-beeen-applied-to-the-problem" class="section level3">
-<h3>Alternative analytical approaches that could have beeen applied to the problem</h3>
-<p>This whole approach assumes that we should change based upon what our current customers think of us. This is probably the same approach that every other airline is doing. Its a relatively safe bet that most of the other airlines are probably doing or attempting to do as we speak. It probably wont jump out as genius in 2020.</p>
-<p>An alternate approach would be to find out which segments of customers are really happy with us and spend all our resources on targeting more people like them (assuming there are lots more of them around) and changing who we are just to make them happier. That could mean driving away the segments of customers that only kind of like us in an attempt to replace them with the segments of customers that really like us. It's a risky alternative approach but hey, half the airlines are probably going to go bankrupt over the next few years anyway. If we do what our competitors are doing then we will get the same results, a 50% chance of going bankrupt. If the approach doesn't work then the airline may fail (as expected) but if it works, <a href="https://www.youtube.com/watch?v=nAnh_ZLGrcE">we did something that changes the game</a>.</p>
+<div id="approach" class="section level1">
+<h1>Approach</h1>
+<div id="understand-the-available-data" class="section level2">
+<h2>Understand the available data</h2>
+<p>The 2 key datasets consist of:</p>
+<ol style="list-style-type: decimal">
+<li><p>Flight data - Information about gender, customer type, age, type of traval, class (fare type), flight distance, departure delays, and arrival delays</p></li>
+<li><p>Survey data - These are all the survey questions we asked the customers on their flights about their flights.</p></li>
+</ol>
+<p>The actual flight data, survey data and data dictionary are linked to in the appendix.</p>
+</div>
+<div id="import-data" class="section level2">
+<h2>Import Data</h2>
+<p>Both datasets are small enough to import and open using a laptop computer. It is relatively easy to combine the 2 data files into one larger data file using the Customer ID field.</p>
+</div>
+<div id="wrangle-data" class="section level2">
+<h2>Wrangle Data</h2>
+<p>The following steps are commented in the R code referenced in the appendix at the end of the document.</p>
+<div id="missing-values" class="section level3">
+<h3>Missing Values</h3>
+<p>There were columns with missing data and this was resolved. The only column with missing values that was arrival delay and the missing values were replaced with 0. The other colums with missing values were not numeric (like answers to questions such as Type of Travel) and missing values were replaced with &quot;Unknown&quot;. It is possible that the act of not answering a queston conveys valuable information that can be picked up by the models later.</p>
+</div>
+<div id="column-type" class="section level3">
+<h3>Column Type</h3>
+<p>Columns with a limited number of possibilities were converted to an R data type with levels. Levels are just a way to order the finite possibilities. For example, rather than order acceptable, excellent, extreemly poor, good, need improvement, and poor alphabetically I reordered them in a way that makes sense to humans from best to worst.</p>
+</div>
+<div id="feature-engineering" class="section level3">
+<h3>Feature Engineering</h3>
+<p>Feature engineering is the creation of new columns from existing columns.</p>
+<p>There are 2 approaches to doing this.</p>
+<p><strong>Approach 1</strong> is manually combining columns mathmatically in a logical way that adds information on some way. For example, I can use the data from the departure delays and arrival delays to calculate if a flight left on time and arrived on time vs left late and arrived late. There are 4 possible scenerios and logically it appears that people that left late and arrived late would be less satisfied.</p>
+<p><strong>Approach 2</strong> is setting a computer to test lots and lots of combinations randomly in order to get lucky and find a great feature. This solution gets computationally expensive. If each solution takes one hour (aka $20) of compute and we allow the computer to brute force the solution with 10 columns of predictor data then there are 10! = 10 * 9 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3,628,800 hours of compute time to run. We would be dead before the computer solves the problem this way and it would be very expensive.</p>
+<p>The compromise it to do some of approach 1 and set a $ budget for approach 2 and see if the computer beats the human.</p>
 </div>
 </div>
+<div id="vizualize-data" class="section level2">
+<h2>Vizualize Data</h2>
+<div id="gender" class="section level3">
+<h3>Gender</h3>
+<script data-id="viz_1" data-object-name="viz_Bch0Pfe7" data-viz="Bch0Pfe7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_1" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>There are slightly more females than males and a higher percentage of females are satisfied than men.</p>
+</div>
+<div id="customertype" class="section level3">
+<h3>CustomerType</h3>
+<script data-id="viz_2" data-object-name="viz_bBD4NEr2" data-viz="bBD4NEr2" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_2" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Loyal Customers are more likely to be satisfied than disloyal customers.</p>
+</div>
+<div id="typetravel" class="section level3">
+<h3>TypeTravel</h3>
+<script data-id="viz_3" data-object-name="viz_yrw8igc4" data-viz="yrw8igc4" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_3" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>There about twice as many business travelers as personal travelers. The business travelers are more likely to be satisfied than personal travelers.</p>
+</div>
+<div id="class" class="section level3">
+<h3>Class</h3>
+<script data-id="viz_4" data-object-name="viz_nsg8jpu3" data-viz="nsg8jpu3" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_4" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Most business class travelers are satisfied and most economy passengers are not satisfied.</p>
+</div>
+<div id="age" class="section level3">
+<h3>Age</h3>
+<script data-id="viz_5" data-object-name="viz_Zzo1mQY3" data-viz="Zzo1mQY3" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_5" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Over 80% of our customers are between 20 and 60. It appears that Satisfaction increases as customers age from 20 to 60.</p>
+</div>
+<div id="age-gender" class="section level3">
+<h3>Age Gender</h3>
+<script data-id="viz_6" data-object-name="viz_YPe3lRG1" data-viz="YPe3lRG1" data-height="full" data-width="normal" data-fit="" ></script><div data-id="viz_6" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Men appear to be less satisfied than women at all age groups.</p>
+</div>
+<div id="flight_distance" class="section level3">
+<h3>Flight_Distance</h3>
+<script data-id="viz_7" data-object-name="viz_dre4zXs6" data-viz="dre4zXs6" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_7" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Its interesting to see at short distances most people are satisfied, middle distances they are not satisfied, and longer distances they are satisfied again.</p>
+</div>
+</div>
+<div id="the-next-few-varables-are-all-factors.-its-important-to-note-patterns-that-jump-out." class="section level2">
+<h2>The next few varables are all factors. Its important to note patterns that jump out.</h2>
+<div id="gate_location" class="section level3">
+<h3>Gate_location</h3>
+<script data-id="viz_8" data-object-name="viz_JbK2CxB9" data-viz="JbK2CxB9" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_8" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="seat_comfort" class="section level3">
+<h3>Seat_comfort</h3>
+<script data-id="viz_9" data-object-name="viz_HBi2JPr4" data-viz="HBi2JPr4" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_9" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="departure_arrival_time_convenient" class="section level3">
+<h3>Departure_Arrival_time_convenient</h3>
+<script data-id="viz_10" data-object-name="viz_gJP2UEQ6" data-viz="gJP2UEQ6" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_10" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="food_drink" class="section level3">
+<h3>Food_drink</h3>
+<script data-id="viz_11" data-object-name="viz_KPf0fxr0" data-viz="KPf0fxr0" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_11" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="inflightwifi_service" class="section level3">
+<h3>Inflightwifi_service</h3>
+<script data-id="viz_12" data-object-name="viz_KHG1hGM3" data-viz="KHG1hGM3" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_12" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="online_support" class="section level3">
+<h3>Online_support</h3>
+<script data-id="viz_13" data-object-name="viz_lVK1fRJ4" data-viz="lVK1fRJ4" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_13" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="ease_of_onlinebooking" class="section level3">
+<h3>Ease_of_Onlinebooking</h3>
+<script data-id="viz_14" data-object-name="viz_JrV2htm5" data-viz="JrV2htm5" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_14" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="onboard_service" class="section level3">
+<h3>Onboard_service</h3>
+<script data-id="viz_15" data-object-name="viz_oxK7kYZ3" data-viz="oxK7kYZ3" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_15" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="leg_room_service" class="section level3">
+<h3>Leg_room_service</h3>
+<script data-id="viz_16" data-object-name="viz_SHn2Gqd6" data-viz="SHn2Gqd6" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_16" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="baggage_handling" class="section level3">
+<h3>Baggage_handling</h3>
+<script data-id="viz_17" data-object-name="viz_lcm8sIU3" data-viz="lcm8sIU3" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_17" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="checkin_service" class="section level3">
+<h3>Checkin_service</h3>
+<script data-id="viz_18" data-object-name="viz_XWJ6uiV8" data-viz="XWJ6uiV8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_18" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="cleanliness" class="section level3">
+<h3>Cleanliness</h3>
+<script data-id="viz_19" data-object-name="viz_wQI8QCa1" data-viz="wQI8QCa1" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_19" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="online_boarding" class="section level3">
+<h3>Online_boarding</h3>
+<script data-id="viz_20" data-object-name="viz_Axm6Rfy9" data-viz="Axm6Rfy9" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_20" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+</div>
+<div id="engineered-features" class="section level2">
+<h2>Engineered Features</h2>
+<div id="delay_summary" class="section level3">
+<h3>delay_summary</h3>
+<script data-id="viz_21" data-object-name="viz_whJ2xDH8" data-viz="whJ2xDH8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_21" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>I thought there would be more difference in satisfaction if the plane was late... live and learn! If I had weather data I could somehow guess if the delay was due to weather or us. That may make a difference.</p>
+</div>
+<div id="age_category" class="section level3">
+<h3>Age_category</h3>
+<p><script data-id="viz_22" data-object-name="viz_OdL8SnD9" data-viz="OdL8SnD9" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_22" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div> Another chart suggesting older people are more likely to be happy than younger people.</p>
+</div>
+</div>
+<div id="prepare-the-data-for-modeling" class="section level2">
+<h2>Prepare the data for Modeling</h2>
+<div id="check-for-normality" class="section level3">
+<h3>Check for Normality</h3>
+<p>If a numeric distribution is not normally distributed it must be transformed before modleing begins.</p>
+</div>
+</div>
+</div>
+<div id="normality-check---summary" class="section level1">
+<h1>Normality Check - Summary</h1>
+<script data-id="analytics_23" data-object-name="analytics_Wdp6ATm6" data-viz="normality_check_table" data-analysis="Wdp6ATm6" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_23" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Age is normally distributed - No need to alter.</p>
+<p>Flight distance is not lets see if it is when we transform it by normalizing it.</p>
+<div id="summary" class="section level3">
+<h3>Summary</h3>
+<script data-id="analytics_24" data-object-name="analytics_hkX3rQm6" data-viz="normality_check_table" data-analysis="hkX3rQm6" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_24" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="q-q-plot" class="section level3">
+<h3>Q-Q Plot</h3>
+<script data-id="analytics_25" data-object-name="analytics_hkX3rQm6" data-viz="scatter" data-analysis="hkX3rQm6" data-height="full" data-width="normal" data-fit="" ></script><div data-id="analytics_25" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="histogram" class="section level3">
+<h3>Histogram</h3>
+<script data-id="analytics_26" data-object-name="analytics_hkX3rQm6" data-viz="hist" data-analysis="hkX3rQm6" data-height="full" data-width="normal" data-fit="" ></script><div data-id="analytics_26" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="remove-columns-if-they-are-correlated" class="section level3">
+<h3>Remove Columns if they are correlated</h3>
+<p>If two columns are highly correlated then one should be removed before modeling. If one column is a customer column and one is a Falcon airlines column I will keep the Falcon airlines column becuase it will represent something that we can change</p>
+</div>
+<div id="correlation---scatter-matrix" class="section level3">
+<h3>Correlation - Scatter Matrix</h3>
+<script data-id="analytics_27" data-object-name="analytics_LGj4EMK7" data-viz="scattermatrix" data-analysis="LGj4EMK7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_27" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="correlation---positive-pairs" class="section level3">
+<h3>Correlation - Positive Pairs</h3>
+<script data-id="analytics_28" data-object-name="analytics_LGj4EMK7" data-viz="table" data-analysis="LGj4EMK7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_28" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="correlation---negative-pairs" class="section level3">
+<h3>Correlation - Negative Pairs</h3>
+<script data-id="analytics_29" data-object-name="analytics_LGj4EMK7" data-viz="negative_table" data-analysis="LGj4EMK7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_29" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Arrival Delay and Departure delay are correlated as expected. That means that we pick one of the two to go into the model or use both to create a new variable that goes into the model. I choose to combine the 2 into a new variable called delay summary.</p>
+</div>
+<div id="delay_summary-graph" class="section level3">
+<h3>delay_summary graph</h3>
+<script data-id="viz_30" data-object-name="viz_whJ2xDH8" data-viz="whJ2xDH8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_30" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="model-data" class="section level2">
+<h2>Model Data</h2>
+<p>As the big picture objective is to make changes to falcon airlines in order to make our</p>
+</div>
+</div>
+<div id="satisfaction" class="section level1">
+<h1>Satisfaction</h1>
+<script data-id="viz_31" data-object-name="viz_IQo3CqC1" data-viz="IQo3CqC1" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_31" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Note: 49,761 / (49,761 + 41,156) = 54.7% of our customers are satisfied. This is important for determing cutoffs in the models.</p>
+<div id="level-1---a-simple-decision-tree" class="section level3">
+<h3>Level 1 - A simple decision tree</h3>
+<div id="assumptions" class="section level4">
+<h4>Assumptions</h4>
+<ol style="list-style-type: decimal">
+<li>Break data into 80% training and 20% Testing Set</li>
+<li>Adjust cutoffs so that we predict approximately the same percent of satisfied customers</li>
+</ol>
+</div>
+<div id="summary-statistics" class="section level4">
+<h4>Summary Statistics</h4>
+<script data-id="analytics_32" data-object-name="analytics_GvX2SQK8" data-viz="summary_table" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_32" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>The decision tree has an accuracy of about 86.7% on the test dataset.</p>
+</div>
+<div id="decision-tree---prediction-matrix" class="section level4">
+<h4>Decision Tree - Prediction Matrix</h4>
+<script data-id="analytics_33" data-object-name="analytics_GvX2SQK8" data-viz="confusion_matrix" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_33" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>The decision tree predicts about 56% satisfaction on the test dataset. I accomplished this by adjusting the cutoffs.</p>
+</div>
+<div id="decision-tree---visualized" class="section level4">
+<h4>Decision Tree - Visualized</h4>
+<script data-id="analytics_34" data-object-name="analytics_GvX2SQK8" data-viz="tree" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_34" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+</div>
+<div id="decision-tree---importance" class="section level3">
+<h3>Decision Tree - Importance</h3>
+<script data-id="analytics_35" data-object-name="analytics_GvX2SQK8" data-viz="feature_importance_bar" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_35" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>According to the vizualaization the most important variables for customer satisfaction are inflight entertainment, seat comfort, online support and ease of onboarding.</p>
+</div>
+<div id="level-2---a-random-forest" class="section level3">
+<h3>Level 2 - A Random Forest</h3>
+</div>
+<div id="level-3---cloud-compute---auto-ml" class="section level3">
+<h3>Level 3 - Cloud compute - Auto ML</h3>
+</div>
+<div id="key-drivers-of-customer-satisfaction" class="section level2">
+<h2>Key Drivers of customer satisfaction</h2>
+<hr />
+</div>
+</div>
+<div id="recommendations" class="section level1">
+<h1>Recommendations</h1>
+<hr />
+</div>
+<div id="appendix" class="section level1">
+<h1>Appendix</h1>
+<ol style="list-style-type: decimal">
+<li>Data Dictionary</li>
+<li>Flight Data</li>
+<li>Survey Data</li>
+<li>Data Wrangling Steps - R Code</li>
+<li>Wrangled Dataset - RDS File</li>
+<li><a href="https://github.com/Richard76/Falcon">Github Repository</a></li>
+</ol>
 </div>
 
 <!-- BEGIN: Exploratory custom footer -->
