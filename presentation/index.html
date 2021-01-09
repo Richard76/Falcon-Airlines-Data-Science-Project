@@ -1,1 +1,541 @@
-<h1>temp</h1>
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+    <meta name="format-detection" content="telephone=no" />
+    <script src="libs/exploratory/resources/jquery.min.js?cb=cb1610157854431"></script>
+    <script src="libs/exploratory/resources/d3.min.js?cb=cb1610157854431"></script>
+    <script src="libs/exploratory/resources/chroma.min.js?cb=cb1610157854431"></script>
+    <script src="libs/exploratory/resources/viz.min.js?cb=cb1610157854431"></script>
+    <style  type="text/css">
+      /* R output adjustment */
+      .viz-container img.r-output {
+        /* Cancel styles on the R output chart image.*/
+        transform: none!IMPORTANT;
+        position: initial!IMPORTANT;
+        top: initial!IMPORTANT;
+        left: initial!IMPORTANT;
+      }
+    </style>
+    <script src="libs/exploratory/resources/plotly.min.js?cb=cb1610157854431"></script>
+    <script src="libs/exploratory/resources/plotly-locale-ja.js?cb=cb1610157854431"></script>
+    <link href="libs/exploratory/resources/plotly-custom.css?cb=cb1610157854431" rel="stylesheet"></link>
+    <script src="libs/exploratory/layout/csI1jQa9.js"></script>
+    <link rel="stylesheet" href="libs/exploratory/resources/slide-base.css" type="text/css" />
+    <link rel="stylesheet" href="libs/exploratory/resources/slide-font-family-default.css" type="text/css" />
+    <link rel="stylesheet" href="libs/exploratory/resources/slide-font-size-medium.css" type="text/css" />
+    <link rel="stylesheet" href="libs/exploratory/resources/slide-font-weight-normal.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+# Satisfaction by the Factors
+
+## Gender
+
+<script data-id="viz_1" data-object-name="viz_csI1jQa9" data-viz="csI1jQa9" data-height="100%" data-width="100%" data-fit="" ></script><div data-id="viz_1" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/exploratory/resources/remark.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLanguage": "r",
+"navigation": {
+"scroll": true,
+"click": true,
+"touch": true
+}
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<!-- BEGIN: Exploratory custom footer -->
+
+<script>
+
+var FULL_WIDTH_MARGIN_LEFT = 60;
+var $body = $(document.body);
+var bodyWidth = $body.width();
+var openInDesktop = window.location.href.indexOf("desktop=true") > -1; 
+
+// The default body max-width is set to 782px so if it is less than 902px 
+// (782 + 60 left margin + 60 right margin) we cancel stretching images. 
+$('img[width="full"]').each(function() {
+  var $elem = $(this);
+  if (bodyWidth > 902) {
+    $elem.attr("width", "");  // remove "full"
+    var elemOffsetLeft = $elem.offset().left;
+    $elem.css({"width": (bodyWidth - (FULL_WIDTH_MARGIN_LEFT*2) )+'px', "max-width": (bodyWidth - (FULL_WIDTH_MARGIN_LEFT*2) )+'px', "margin-left": (-1 *(elemOffsetLeft - FULL_WIDTH_MARGIN_LEFT)) + "px" });
+  } else {
+    $elem.attr("width", "100%"); // replace "full" with "100%"
+  }
+});
+
+$('a').each(function(index, a){
+  var $link = $(this);
+  if($link.attr('href') && !$link.attr('href').startsWith('file')){// tab has a with href="file" so exclude tab
+    $link.attr('target','_blank'); // make sure link opens another tab or window.
+  }
+});
+
+
+var enableLinks = function() {
+  if (!openInDesktop) {
+    return false;
+  }
+  $('a').each(function(index, a){
+    var $link = $(this);
+    // Enable links starting with http* and mailto. Others are used for 
+    // other purpose such as map, tab, etc so don't touch those. 
+    if($link.attr('href') && /^(http:\/\/|https:\/\/|mailto:)/.test($link.attr('href'))){
+      $link.off("click");
+      $link.on("click", function (e) {
+        e.preventDefault(); // make sure to block default to avoid external content rendered inside Exploratory Desktop.
+        window.parent.postMessage(JSON.stringify({action:'OpenExternalLink', url: $link.attr('href')}),'*');
+        //MarkdownActions.openExternalLink($link.attr('href'));
+      });
+    }
+  });
+};
+
+var onMessageReceiveHandler = function(event){
+  var data = null;   
+  try {
+    data = JSON.parse(event.data);
+  } catch(e) {
+    // The event.data may be just a text like 'ready'. 
+    // We ignore those cases. 
+  }
+  if (!data) {
+    return;
+  }
+  if(data.action) {
+    switch(data.action) {
+      case "EnableLinks":
+        enableLinks();
+        break;
+    }
+  }
+
+}
+window.addEventListener('message', onMessageReceiveHandler, false); 
+
+var ready = function(){
+  window.parent.postMessage(JSON.stringify({action:'DocumentReady'}),'*');
+}
+document.addEventListener("DOMContentLoaded", ready);
+
+
+
+</script>
+
+<script>
+
+
+// Find exploratory vizs
+var $vizs = $("script[data-id]");
+
+// Capturing charts/analytics snapshot images for Word output and 
+// self-contained HTML output.  (self-contained HTML output is not used now.)
+var _generateSnapshot = function() {
+  var $elem = $(this); // this <a> tag
+  var id = $elem.attr("data-id").replace(/^a\-/, "");
+  var objectName = $elem.attr("data-object-name");
+  var analyticsName = null;
+
+  var viz = window[objectName];
+  if (!window._datauris) 
+    window._datauris = {};
+      
+  // If it is analytics, find the viz metadata in analytics json.
+  if (/^analytics_/.test(id)) {
+    var vizName = $elem.attr("data-viz");
+    // If no corresponding metadata found, just return. 
+    if (!viz.vizs[vizName]) {
+      return;
+    }
+    analyticsName = viz.name;
+    viz = viz.vizs[vizName].metadata;
+  }
+  
+  if (VizUtil.isPivot(viz.options.marker)) {
+      // do nothing.
+  } else if (VizUtil.isLeaflet(viz.options.marker)) {
+    var map = window._leaflet_map_objs[id];
+    var options = {
+      exclude: ['.leaflet-control-zoom', '.leaflet-control-attribution', '.info-box'],
+      format: 'image/png'
+    };
+    return map.export(options)
+    .then(function(res) {
+      window._datauris[id] = res ? res.data : "null";
+      return null;
+    })
+    .catch(function(e){
+      window._datauris[id] = "null";
+    });
+  } else if (VizUtil.isROutput(viz.options.marker)) {
+  } else if (VizUtil.isPlotly(viz.options.marker)) {
+    // plotly
+    var graphDiv = document.querySelector('div[data-id="div-'+id+'"] .js-plotly-plot');
+    var origw = graphDiv.clientWidth;
+    var origh = graphDiv.scrollHeight;
+    var width = 1200; 
+    var height = graphDiv.scrollHeight > graphDiv.clientHeight ? width * origh / origw : 800;
+    return Plotly.toImage(graphDiv,  {format: "png", width: width, height: height})
+    .then(function(res){
+      window._datauris[id] = !!res ? res : "null";
+    }) 
+    .catch(function(e){
+      window._datauris[id] = "null";
+    });
+  }
+};
+
+var _processViz = function() {
+  
+  var $elem = $(this); // This script tag
+  var id = $elem.attr("data-id");
+  var objectName = $elem.attr("data-object-name");
+  // Hide loading placeholer
+  // It could match multiple elements if there are same charts.
+  $('.viz-loading[data-id="'+id+'"]').hide();
+  // Backward compatibility. The rmarkdown renders the old cached data if available.
+  $('.viz-rendering-error[id="loading-'+id+'"]').hide();
+
+  var lang = document.documentElement.lang || null;
+  var viz = window[objectName];
+  var vizName = $elem.attr("data-viz");
+  var analyticsName = null;
+
+  // If it is analytics, find the viz metadata in analytics json.
+  if (/^analytics_/.test(id)) {
+    if (viz.vizs[vizName]) {
+      analyticsName = viz.name;
+      viz = VizUtil.analyticify(viz.vizs[vizName].metadata);
+    } else {
+      // If no metadata found, just set viz to null. 
+      // Usually it shouldn't happen but just in case it happens. #9689
+      viz = null;
+    }
+  }
+
+  // Check the available area size for viz.
+  var availableHeight = 500;  // Default - it never be used but just in case.
+  var availableWidth = 740;   // Default - it never be used but just in case.
+  var $tmp = $elem;
+  // As for the height, get the available height of the nearest parent 
+  // but it should avoid the height less than 200. It maybe the nearest p tag
+  // that we don't want to pick for the height. 
+  while($tmp) {
+    if ($tmp.height()>200) {
+      // Subtract 26px slide padding top.
+      availableHeight= $tmp.height() - 26;
+      break;
+    }
+    $tmp = $tmp.parent();
+  }
+  // For the width, get the available width of the nearest parent. 
+  // If the chart is directly on the slide, it will be the slide's width. 
+  // If the chart is inside the layout column, it will be the column's width.
+  $tmp = $elem;
+  while($tmp) {
+    if ($tmp.width()>0) {
+      availableWidth = $tmp.width();
+      break;
+    }
+    $tmp = $tmp.parent();
+  }
+
+  var defaultHeight = $elem.attr("data-height");
+  var defaultWidth =  $elem.attr("data-width");
+  if (defaultHeight==="full") { defaultHeight = "100%"; }
+  if (defaultWidth ==="full") { defaultWidth  = "100%"; }
+  // Validate values. If the value is invalid, use the default value. 
+  // Valid value examples are '300' (implies 300px), '300px' (number with 'px'), or '80%' (number with '%'). 
+  if ( !defaultHeight|| !/^[\d]+(%|px|)$/.test(defaultHeight)) { defaultHeight = "70%"; } // Default: 70%
+  if ( !defaultWidth || !/^[\d]+(%|px|)$/.test(defaultWidth))  { defaultWidth = "100%"; } // Default: 100%
+
+  var height = availableHeight;
+  var width = availableWidth; 
+
+  if (defaultHeight && /^[\d]+%$/.test(defaultHeight)) {
+    height = height * parseInt(defaultHeight.replace('%','')) / 100; 
+  } else {
+    height = parseInt(defaultHeight.replace('px', '')); // set the user defined height
+  }
+
+  if (defaultWidth && /^[\d]+%$/.test(defaultWidth)) {
+    width = width * parseInt(defaultWidth.replace('%','')) / 100; 
+  } else {
+    width = parseInt(defaultWidth.replace('px', '')); // set the user defined width
+  }
+
+  // Insert a viz canvas div right after the script tag.
+  // If there's already a div there (refresh case), do nothing.
+  var $div = $('div[data-id="div-'+id+'"]');
+  if ($div.length === 0) {
+    $div = $("<div>").attr('data-id','div-'+id).css({"height":height+"px", "width": width+"px"}).addClass("viz-container markdown-viz-container")   
+    $elem.after($div);
+  }
+  $div.show();
+  
+  // If viz is not available, render no data and exit. 
+  if (!viz) {
+    VizUtil.renderNoData($div[0], "No chart data found: "+vizName);
+    // Mark it as rendered.
+    window._vizRenderingStatus[id] = true;  
+    return;
+  }
+  
+  // Add a border to table/pivot
+  if ( /^(table|pivot|summarytable)$/.test(viz.options.marker)) {
+    $div.css({"border-radius":"3px", "border":"1px solid #f0f0f0", "padding":"0px 0px 0px 4px"});
+  }
+
+  var $trigger = $("<a>").attr({'data-id':'a-'+id, 'data-viz':vizName, 'data-object-name':objectName}).addClass("viz-snapshot-trigger").click(_generateSnapshot);
+
+  $elem.after($trigger);   
+
+  // Figure out the canvas div width and height.
+  width = $div.width() || width; 
+  height = $div.height() || height;
+
+  // Set the width and height explicitly not to expand. 
+  $div.css({'height': height+'px'});
+  $div.css({'width': width+'px'});
+
+  // in case of facet, make the viz width a bit smaller for the vert scroll bar. 
+  viz.options.width = (!viz.options.facet ? width : width-20);
+  viz.options.height= height;
+
+  // Show no data message if data is empty. 
+  // Some chart can render its own no data message so bypass for those cases. 
+  if (VizUtil.shouldRenderNoData(viz.options.data, viz.options)) {
+    // Show the query error message if available.
+    VizUtil.renderNoData($div[0], viz.options._lastQueryErrorMessage);
+    // Mark it as rendered.
+    window._vizRenderingStatus[id] = true;
+    return;
+  }
+
+  if (VizUtil.isPivot(viz.options.marker)) {
+    // Enable "Full Width" mode #15811.
+    viz.options.pivotFullWidthMode = "on";
+
+    // Render pivot table
+    PivotTableGenerator.render(viz.options, viz.options.data, $div[0],
+      null, null, null, null, null, null, null, lang);
+    // adjust height 
+    var pTitleHeight = $div.find('.pivot-title').outerHeight(true); 
+    if ($div.find('.pivot-title').hasClass("hidden")) {
+      pTitleHeight = 0;
+    }
+    var pColTitleHeight = $div.find('.pivot-col-title').outerHeight(true);
+    if ($div.find('.pivot-col-title').hasClass("hidden")) {
+      pColTitleHeight = 0;
+    }
+    var pHeaderHeight = $div.find('.pivot-table-frame.pivot-table-col-header-frame').outerHeight();
+    var pBodyHeight = $div.find('.pivot-table-frame.pivot-table-body-frame').outerHeight();
+    var horizScrollBarHeight = 18;
+    var pHeight = pTitleHeight + pColTitleHeight + pHeaderHeight + pBodyHeight + horizScrollBarHeight;
+    //console.log(pTitleHeight + " " +pColTitleHeight + " " + pHeaderHeight + " " + pBodyHeight + " " + pHeight + " " + $div.height())
+    if (viz.options.marker==="singlevalue"){
+      $div.css({'height':'120px', 'min-height':'120px'});
+    } else if (pHeight < $div.height()) {
+      $div.css({"height": (pHeight)+'px', "min-height":""});
+    }
+    
+    // Fit mode.
+    var fitMode =  $elem.attr("data-fit");
+    var pWidth = $div.find('.pivot-table-frame.pivot-table-body-frame').outerWidth() + 14 /*padding*/;
+    var divHeight = $div.height();
+    var divWidth = $div.width();
+    var ratio, scale;
+    if (pHeight > divHeight && fitMode === "height") {
+      // Height fit mode.
+      // Set the outer div size larger to fit the pivot and scale (shrink)
+      // the pivot to fit the pivot in the original div size without scrollbars.  
+      // If you scale (shirnk) the pivot, the scaled pivot will be aligned 
+      // at the center of the original div. So we need to move left and top 
+      // to locate the pivot at the original position. 
+      ratio = pHeight/divHeight;
+      scale = divHeight/pHeight;
+      $div.height(pHeight);
+      $div.width(divWidth * ratio);
+      // (1-scale)/2 is a top/bottom/left/right padding ratio between 
+      // the scaled pivot and the original div. 
+      $div.css("transform", "scale("+(scale)+") translate("+( ($div.width())*((1-scale)/2)*ratio*-1)+"px, "+ (($div.height())*((1-scale)/2)*ratio*-1)  +"px)");
+      // Re-render the pivot to make sure it fits.
+      PivotTableGenerator.render(viz.options, viz.options.data, $div[0],
+        null, null, null, null, null, null, null, lang);
+
+    } else if (pWidth > divWidth && fitMode === "width") {
+      // Width fit mode.
+      ratio = pWidth/divWidth;
+      scale = divWidth/pWidth;
+      $div.height(divHeight * ratio);
+      $div.width(pWidth);
+      $div.css("transform", "scale("+(scale)+") translate("+( ($div.width())*((1-scale)/2)*ratio*-1)+"px, "+ (($div.height())*((1-scale)/2)*ratio*-1) +"px)");
+      // Re-render the pivot to make sure it fits.
+      PivotTableGenerator.render(viz.options, viz.options.data, $div[0],
+        null, null, null, null, null, null, null, lang);
+
+    }
+    
+
+  } else if (VizUtil.isLeaflet(viz.options.marker)) {
+    // Render leaflet map
+    switch (viz.options.marker) {
+      case 'map':
+      case 'maphmap':
+        $div.parent().parent().css({"background-color":"#fff"});
+        MapGenerator.render(viz.options, viz.options.data, $div[0],
+          null, null, null, null, null, null, null, lang);
+        break;
+      case 'geojson':
+        $div.parent().parent().css({"background-color":"#fff"});
+        var geojsonObjectName = 'geojson_' + viz.options.geojson; 
+        MapGenerator.render(viz.options, viz.options.data, $div[0], window[geojsonObjectName],
+          null, null, null, null, null, null, lang);
+        break;
+      case 'easymap':
+        $div.parent().parent().css({"background-color":"#fff"});
+        var geojsonObjectName = 'geojson_' + viz.options.easymapMap; 
+        MapGenerator.render(viz.options, viz.options.data, $div[0], window[geojsonObjectName],
+          null, null, null, null, null, null, lang);
+        break;
+
+      default:
+        break;
+    }
+  } else if (VizUtil.isROutput(viz.options.marker)) {
+    // Render R output
+    ROutputGenerator.render(viz.options, {"outputFile": [ "libs/exploratory/layout_output/"+ (analyticsName ? analyticsName+"-" : "") + viz.name+".png"]}, $div[0], true);
+  } else if (VizUtil.isPlotly(viz.options.marker)) {
+    // Show layout toolbar.
+    viz.options.showFacetLayoutTool = "on";    
+    // Render plotly graph
+    $div.css({"overflow-y":"auto"});
+    PlotlyGraphGenerator.render(viz.options, viz.options.data, $div[0], true,
+      null, null, null, null, null, null, 
+      // Pass dummy function to onPropUpdateCallback to enable toolbar.
+      function(e){ return false; }, 
+      lang);
+  }
+
+  // Mark it as rendered.
+  window._vizRenderingStatus[id] = true;
+  enableLinks();
+  window.parent.postMessage(JSON.stringify({action:'SetRenderingStatus', renderingStatus: window._vizRenderingStatus}),'*');
+}
+
+// Track the viz rendering status. 
+window._vizRenderingStatus = {};
+
+// Render charts.
+window._renderViz = function(){
+  $vizs.each(function(index) {
+    window._vizRenderingStatus[$(this).attr("data-id")] = false;
+    setTimeout(_processViz.bind(this) ,50);
+  });
+};
+
+// Show loading messages on charts. 
+window._showLoading = function(){
+  $vizs.each(function(index) {
+    var dataId = $(this).attr("data-id");
+    $('.viz-loading[data-id="'+dataId+'"]').show();
+    $('div[data-id="div-'+dataId+'"]').hide();
+  });
+};
+
+// Reload chart metadata. Used in Interactive mode.
+window._reloadMetadata = function(baseUrl){
+  var cb = "?cb=" + Date.now();
+  $vizs.each(function(index) {
+    var analyticsId = $(this).attr("data-analysis"),
+      vizId = $(this).attr("data-viz"),
+      url = "";
+    if (analyticsId) {
+      url = baseUrl+"/note_content/libs/exploratory/analytics/"+analyticsId+".js"+cb;
+    } else {
+      url = baseUrl+"/note_content/libs/exploratory/layout/"+vizId+".js"+cb;
+    }
+    $(document.body).append('<script src="'  + url +'" />');
+  });
+};
+
+// Render charts at loading time. 
+window._renderViz();
+
+</script>
+<!-- END: Exploratory custom footer -->
+
+  </body>
+</html>
