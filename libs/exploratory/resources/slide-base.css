@@ -1,0 +1,146 @@
+/* Slide base css from example.css */
+
+body { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
+h1, h2, h3 {
+  font-weight: normal;
+}
+a, a > code {
+  color: rgb(249, 38, 114);
+  text-decoration: none;
+}
+.footnote {
+  position: absolute;
+  bottom: 3em;
+  padding-right: 4em;
+  font-size: 90%;
+}
+.remark-code, .remark-inline-code { font-family: 'Lucida Console', Monaco, monospace; }
+.remark-code-line-highlighted     { background-color: #ffff88; }
+
+.inverse {
+  background-color: #272822;
+  color: #d6d6d6;
+  text-shadow: 0 0 20px #333;
+}
+.inverse h1, .inverse h2, .inverse h3 {
+  color: #f3f3f3;
+  line-height: 1.0em;
+}
+/* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #000;
+}
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+.pull-left {
+  float: left;
+  width: 47%;
+}
+.pull-right {
+  float: right;
+  width: 47%;
+}
+.pull-right ~ * {
+  clear: both;
+}
+img, video, iframe {
+  max-width: 100%;
+}
+blockquote {
+  border-left: solid 5px lightgray;
+  padding-left: 1em;
+}
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+thead, tfoot, tr:nth-child(even) { background: #eee }
+
+@page { margin: 0; }
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
+
+
+/* Exploratory customization */
+
+body {
+  color: rgba(0,0,0,0.8);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 30px;
+}
+
+.remark-slide-content p { line-height:1.64; }
+.remark-slide-content li { line-height:1.64; }
+.remark-slide-content li+li { margin-top:10px; }
+
+.remark-slide-content .larger { font-size: 130%; }
+.remark-slide-content .smaller { font-size: 70%; }
+.remark-slide-content .remark-slide-number { font-size: 20px; }
+.remark-slide-content .remark-code { font-size: 80%; line-height:1.44}
+
+.remark-slide-container       > .remark-slide-scaler { box-shadow: none; }
+.remark-slide-container:first-child > .remark-slide-scaler { box-shadow: 0 0 30px #888; }
+
+.remark-code { white-space: pre-wrap; }
+
+/* Set the background color to black #9677 */
+.remark-container { background-color: #000000; }
+
+a, a:hover, a:visited, a:active, a > code { color: #00ab6d; }
+
+/* Hide the remarkjs source textarea at boot time */
+textarea#source { visibility: hidden; }
+
+/* Overriding the remark style */ 
+
+/* Overriding the display=none .remark-slide-container display setting. 
+   It is required to render the dynamic contents. If it is set to none, 
+   width and height of the target rendering area become 0 so that 
+   it doesn't render correctly. 
+   It doesn't break moving between slides because it actually uses 
+   z-index to show/hide slides. But we may miss some features such as
+   slide transition effects like fading.  */
+.remark-slide-container { display:block; }
+/* Overriding remark-fading class to make the slide transition instantly.
+   it fixes the slide transition issue on safari.   */
+.remark-fading { display:none; }
+
+
+/* viz styles */
+
+/* Need border-box box sizing for our viz */
+.viz-container * { box-sizing: border-box; }
+.viz-container { color: #4d4d4d; }
+
+/* Overriding the style to show the border correctly */
+.viz-container .pivot-col-header-view {
+  height: 29px;
+}
