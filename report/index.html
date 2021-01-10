@@ -26,10 +26,10 @@
 <script src="libs/navigation-1.1/codefolding.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
 <meta name="format-detection" content="telephone=no" />
-<script src="libs/exploratory/resources/jquery.min.js?cb=cb1610228676751"></script>
-<script src="libs/exploratory/resources/d3.min.js?cb=cb1610228676751"></script>
-<script src="libs/exploratory/resources/chroma.min.js?cb=cb1610228676751"></script>
-<script src="libs/exploratory/resources/viz.min.js?cb=cb1610228676751"></script>
+<script src="libs/exploratory/resources/jquery.min.js?cb=cb1610313653807"></script>
+<script src="libs/exploratory/resources/d3.min.js?cb=cb1610313653807"></script>
+<script src="libs/exploratory/resources/chroma.min.js?cb=cb1610313653807"></script>
+<script src="libs/exploratory/resources/viz.min.js?cb=cb1610313653807"></script>
 <style  type="text/css">
   /* R output adjustment */
   .viz-container img.r-output {
@@ -40,11 +40,11 @@
     left: initial!IMPORTANT;
   }
 </style>
-<script src="libs/exploratory/resources/plotly.min.js?cb=cb1610228676751"></script>
-<script src="libs/exploratory/resources/plotly-locale-ja.js?cb=cb1610228676751"></script>
-<link href="libs/exploratory/resources/plotly-custom.css?cb=cb1610228676751" rel="stylesheet"></link>
-<link href="libs/exploratory/resources/pivot.css?cb=cb1610228676751" rel="stylesheet"></link>
-<script src="libs/exploratory/resources/jquery.balloon.min.js?cb=cb1610228676751"></script>
+<script src="libs/exploratory/resources/plotly.min.js?cb=cb1610313653807"></script>
+<script src="libs/exploratory/resources/plotly-locale-ja.js?cb=cb1610313653807"></script>
+<link href="libs/exploratory/resources/plotly-custom.css?cb=cb1610313653807" rel="stylesheet"></link>
+<link href="libs/exploratory/resources/pivot.css?cb=cb1610313653807" rel="stylesheet"></link>
+<script src="libs/exploratory/resources/jquery.balloon.min.js?cb=cb1610313653807"></script>
 
 <style  type="text/css">
   /* pivot adjustment */
@@ -83,6 +83,7 @@
 <script src="libs/exploratory/analytics/LGj4EMK7.js"></script>
 <script src="libs/exploratory/layout/IQo3CqC1.js"></script>
 <script src="libs/exploratory/analytics/GvX2SQK8.js"></script>
+<script src="libs/exploratory/analytics/CqL0Omd7.js"></script>
 
 
 
@@ -114,8 +115,8 @@ h6 {
 }
 </style>
 
-<link rel="stylesheet" href="libs/exploratory/resources/note-base.css?cb=20210109T214436706Z" type="text/css" />
-<link rel="stylesheet" href="libs/exploratory/resources/note-mobile.css?cb=20210109T214436706Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/note-base.css?cb=20210110T212053753Z" type="text/css" />
+<link rel="stylesheet" href="libs/exploratory/resources/note-mobile.css?cb=20210110T212053753Z" type="text/css" />
 
 </head>
 
@@ -337,13 +338,13 @@ div.tocify {
 
 <p>Richard Farr</p>
 <p>Falcon Airlines Report</p>
-<p>January 9th, 2021</p>
+<p>January 2021</p>
 <hr />
 <div id="executive-summary" class="section level1">
 <h1>Executive Summary</h1>
 <div id="problem" class="section level2">
 <h2>Problem</h2>
-<p>Many of Falcon Airlines customers are not satisfied with Falcon Airlines. If things continue this way we will lose customers, lose market share, lose revenues, lose profits, and executives will eventually be let go and replaced with executives willing to tackle problems that boost the stock price.</p>
+<p>Many of Falcon Airlines customers are not satisfied with Falcon Airlines. If things continue this way we will lose customers, lose market share, lose revenues, lose profits, and executives will eventually be let go and replaced with executives willing to tackle problems that result in more satisfied customers, more revenue and a higher stock price.</p>
 </div>
 <div id="solution" class="section level2">
 <h2>Solution</h2>
@@ -359,7 +360,22 @@ div.tocify {
 <p>Phase 2: Change marketing in order to attract new customers that are more likely to be satisfied with Falcon airlines.</p>
 <p>We beleive that going after low hanging fruit first and generating momentum is better than biting off more than we can chew and failing.</p>
 <p>This report will focus our efforts on Phase 1 and specifically focus on the factors within our control to change in order to improve current customers satisfaction.</p>
-<p>The top 5 factors that we should improve in order to make our customers more satisfied are: 1. seating? 2.</p>
+<p>The top few factors that are within our control that we should do a cost benefit analysis on are:</p>
+<ul>
+<li>Seat comfort</li>
+<li>Inflight Entertainment</li>
+<li>Onboard Service</li>
+<li>Cleanliness</li>
+<li>Ease of onboarding</li>
+<li>Online boarding</li>
+<li>Online Support</li>
+<li>Checkin Service</li>
+<li>Baggage Handling</li>
+<li>Inflight Wifi Service</li>
+</ul>
+<p>Utltimatly we want to attack the low hanging fruit. We want to fix the factors that are fast, easy, and cheap to fix but will result in customers being delighted.</p>
+<p>In order to do that we need to estimate what it will cost to a) become above average and b) the best for each factor in relation to our direct competitors.</p>
+<p>This report only details one side of the process, the benefet side. The cost and time needed to fix each factor will be the next step.</p>
 <hr />
 </div>
 </div>
@@ -396,10 +412,13 @@ div.tocify {
 <p><strong>Approach 1</strong> is manually combining columns mathmatically in a logical way that adds information on some way. For example, I can use the data from the departure delays and arrival delays to calculate if a flight left on time and arrived on time vs left late and arrived late. There are 4 possible scenerios and logically it appears that people that left late and arrived late would be less satisfied.</p>
 <p><strong>Approach 2</strong> is setting a computer to test lots and lots of combinations randomly in order to get lucky and find a great feature. This solution gets computationally expensive. If each solution takes one hour (aka $20) of compute and we allow the computer to brute force the solution with 10 columns of predictor data then there are 10! = 10 * 9 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3,628,800 hours of compute time to run. We would be dead before the computer solves the problem this way and it would be very expensive.</p>
 <p>The compromise it to do some of approach 1 and set a $ budget for approach 2 and see if the computer beats the human.</p>
+<p>In this case all the models will end up pretty much saying the same thing. What is going to matter is the cost to fix each one.</p>
 </div>
 </div>
 <div id="vizualize-data" class="section level2">
 <h2>Vizualize Data</h2>
+<p>Its important to realize that we can not easily change some of these things. For example changing our customers gender will require driving away some customers and attracting new ones. This is possible but it is expensive and will take some time. On the other hand, switching out the cushions on the seats is probably relatively cheap and can be done relatively fast.</p>
+<p>It makes sense to attack the things that are fast, cheap, and easy over slow, expensive, and difficult.</p>
 <div id="gender" class="section level3">
 <h3>Gender</h3>
 <script data-id="viz_1" data-object-name="viz_Bch0Pfe7" data-viz="Bch0Pfe7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_1" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
@@ -408,12 +427,12 @@ div.tocify {
 <div id="customertype" class="section level3">
 <h3>CustomerType</h3>
 <script data-id="viz_2" data-object-name="viz_bBD4NEr2" data-viz="bBD4NEr2" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_2" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
-<p>Loyal Customers are more likely to be satisfied than disloyal customers.</p>
+<p>Loyal Customers are more likely to be satisfied than disloyal customers but we can't just press a button to convert them from one to another. This is not easily fixable.</p>
 </div>
 <div id="typetravel" class="section level3">
 <h3>TypeTravel</h3>
 <script data-id="viz_3" data-object-name="viz_yrw8igc4" data-viz="yrw8igc4" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_3" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
-<p>There about twice as many business travelers as personal travelers. The business travelers are more likely to be satisfied than personal travelers.</p>
+<p>There about twice as many business travelers as personal travelers. The business travelers are more likely to be satisfied than personal travelers. If we were to adjsut marketing to attract new customers, it may be worth looking into attracting more business travelers. But it will boil down to a cost per aquision vs lifetime customer value problem.</p>
 </div>
 <div id="class" class="section level3">
 <h3>Class</h3>
@@ -433,7 +452,7 @@ div.tocify {
 <div id="flight_distance" class="section level3">
 <h3>Flight_Distance</h3>
 <script data-id="viz_7" data-object-name="viz_dre4zXs6" data-viz="dre4zXs6" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_7" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
-<p>Its interesting to see at short distances most people are satisfied, middle distances they are not satisfied, and longer distances they are satisfied again.</p>
+<p>Its interesting to see at short distances most people are satisfied, middle distances they are not satisfied, and longer distances they are satisfied again. But changing our routes to take advantage of this relationship would be insanely expensive and probably not worth doing.</p>
 </div>
 </div>
 <div id="the-next-few-varables-are-all-factors.-its-important-to-note-patterns-that-jump-out." class="section level2">
@@ -445,6 +464,7 @@ div.tocify {
 <div id="seat_comfort" class="section level3">
 <h3>Seat_comfort</h3>
 <script data-id="viz_9" data-object-name="viz_HBi2JPr4" data-viz="HBi2JPr4" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_9" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Hardly anybody thinks we have excellent seats. It seems like this is something relatively easy, fast, and cheap to improve upon compared to other things.</p>
 </div>
 <div id="departure_arrival_time_convenient" class="section level3">
 <h3>Departure_Arrival_time_convenient</h3>
@@ -453,10 +473,12 @@ div.tocify {
 <div id="food_drink" class="section level3">
 <h3>Food_drink</h3>
 <script data-id="viz_11" data-object-name="viz_KPf0fxr0" data-viz="KPf0fxr0" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_11" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>If this turns out the be important to our customers too then its probably a cheap, fast, and easy thing to fix. Low hanging fruit?</p>
 </div>
 <div id="inflightwifi_service" class="section level3">
 <h3>Inflightwifi_service</h3>
 <script data-id="viz_12" data-object-name="viz_KHG1hGM3" data-viz="KHG1hGM3" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_12" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>It seems like making the wifi better would be cheap, fast, and easy. If turns out to be important to our customers too then its worth looking into upgrading.</p>
 </div>
 <div id="online_support" class="section level3">
 <h3>Online_support</h3>
@@ -489,6 +511,7 @@ div.tocify {
 <div id="online_boarding" class="section level3">
 <h3>Online_boarding</h3>
 <script data-id="viz_20" data-object-name="viz_Axm6Rfy9" data-viz="Axm6Rfy9" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_20" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>Whats important above is that we understand what the factors are and have a general understanding of its something we can fix (like seat cusions) or whether its something that will take a lot of time and money to fix like what kind of customers we have now vs appear to be a better fit for us. The latter is a big and slow problem to fix, we are looking for the low hanging fruit here. If that works we can attack the bigger and more expensive problems later.</p>
 </div>
 </div>
 <div id="engineered-features" class="section level2">
@@ -501,6 +524,7 @@ div.tocify {
 <div id="age_category" class="section level3">
 <h3>Age_category</h3>
 <p><script data-id="viz_22" data-object-name="viz_OdL8SnD9" data-viz="OdL8SnD9" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_22" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div> Another chart suggesting older people are more likely to be happy than younger people.</p>
+<p>Remember: Just becuase I did not engineer a feature does not mean the computer didn't automagically generate and try that feature later in the automl section and didn't tell us it did.</p>
 </div>
 </div>
 <div id="prepare-the-data-for-modeling" class="section level2">
@@ -558,15 +582,17 @@ div.tocify {
 <h1>Satisfaction</h1>
 <script data-id="viz_31" data-object-name="viz_IQo3CqC1" data-viz="IQo3CqC1" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="viz_31" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
 <p>Note: 49,761 / (49,761 + 41,156) = 54.7% of our customers are satisfied. This is important for determing cutoffs in the models.</p>
-<div id="level-1---a-simple-decision-tree" class="section level3">
-<h3>Level 1 - A simple decision tree</h3>
-<div id="assumptions" class="section level4">
-<h4>Assumptions</h4>
+<div id="general-process" class="section level4">
+<h4>General Process</h4>
 <ol style="list-style-type: decimal">
 <li>Break data into 80% training and 20% Testing Set</li>
+<li>Use the training data to build a model</li>
 <li>Adjust cutoffs so that we predict approximately the same percent of satisfied customers</li>
+<li>Check the confusion matrix to see if the predicions are any good.</li>
 </ol>
 </div>
+<div id="approach-1---a-simple-decision-tree" class="section level3">
+<h3>Approach 1 - A simple decision tree</h3>
 <div id="summary-statistics" class="section level4">
 <h4>Summary Statistics</h4>
 <script data-id="analytics_32" data-object-name="analytics_GvX2SQK8" data-viz="summary_table" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_32" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
@@ -587,19 +613,85 @@ div.tocify {
 <script data-id="analytics_35" data-object-name="analytics_GvX2SQK8" data-viz="feature_importance_bar" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_35" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
 <p>According to the vizualaization the most important variables for customer satisfaction are inflight entertainment, seat comfort, online support and ease of onboarding.</p>
 </div>
-<div id="level-2---a-random-forest" class="section level3">
-<h3>Level 2 - A Random Forest</h3>
+<div id="approach-2---a-random-forest" class="section level3">
+<h3>Approach 2 - A Random Forest</h3>
+<div id="summary-statistics-1" class="section level4">
+<h4>Summary Statistics</h4>
+<script data-id="analytics_36" data-object-name="analytics_CqL0Omd7" data-viz="summary_table" data-analysis="CqL0Omd7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_36" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
 </div>
-<div id="level-3---cloud-compute---auto-ml" class="section level3">
-<h3>Level 3 - Cloud compute - Auto ML</h3>
+<div id="pred.-matrix" class="section level4">
+<h4>Pred. Matrix</h4>
+<script data-id="analytics_37" data-object-name="analytics_CqL0Omd7" data-viz="confusion_matrix" data-analysis="CqL0Omd7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_37" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+</div>
+<div id="importance" class="section level4">
+<h4>Importance</h4>
+<script data-id="analytics_38" data-object-name="analytics_CqL0Omd7" data-viz="feature_importance_bar" data-analysis="CqL0Omd7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_38" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div>
+<p>The random forest model says that the most important variables are seat comfort, inflight entertainment, ease of onboarding, class, &amp; online booking.</p>
+<p>Thats good becuase it has lots of overlap to the previous decision tree model.</p>
+</div>
+</div>
+<div id="approach-3---automl-cloud-compute-using-rapidminer-go" class="section level3">
+<h3>Approach 3 - AutoML Cloud compute using Rapidminer Go</h3>
+<p>In previous reports I used both Rapidminer Go and Google AutoML Tables. Based on experience, I believe that using Rapidminer Go is better for this smaller data problem due to savings in time and compute cost. If we were dealing with a much larger dataset I would request authorization to spend money on Google cloud compute but as the problem is solvable in Rapidminer Go I am going to use rapidminer go for the AutoML.</p>
+<div id="model-canidates" class="section level4">
+<h4>Model Canidates</h4>
+<p>In approach 1 and 2 I just ran one model each for a total of 2 candidates. Rapidminer Go took the cleaned data and built lots of different models using a bigger and faster processor than my computer has.</p>
+<p>It took about 3 hours to generate all the models but here are the results.</p>
+<div class="figure">
+<img src="libs/exploratory/images/p1.png" />
+
+</div>
+<p>The gradient boosted trees model was the most accurate and also performed best or near the best for most of the metrics.</p>
+<div class="figure">
+<img src="libs/exploratory/images/p2.png" />
+
+</div>
+<p>The confusion matrix for the gradient boosted trees model predicted (416 + 9392) / ((7487 + 561) + 416 + 9392) = 9808 / 17856 = 54.9% to be satisfied. Which is good. It appears that Rapidminer Go automatically adjusts the cutoffs so that the percentage predicted is approximately what you would expect.</p>
+<p>This is just another data point suggesting that we can predict which people will be satisfied relatively well.</p>
+<p>Here are the relative importance of the predictors for the gradient boosted trees model.</p>
+<div class="figure">
+<img src="libs/exploratory/images/p3.png" />
+
+</div>
+<p>In general the top 10 predictors have a lot of overlap with the other models.</p>
+<p>Ultimately we care that the models are pretty consistant and they suggest that the same columns are important.</p>
+<div class="figure">
+<img src="libs/exploratory/images/p4.png" />
+
+</div>
+</div>
 </div>
 <div id="key-drivers-of-customer-satisfaction" class="section level2">
 <h2>Key Drivers of customer satisfaction</h2>
+<p>To summarize, all 3 methods produced pretty good results and in this use case it really doesnt matter what the best model is. All that matters is whether the models say the same things are important.</p>
+<p>Lets take a look.</p>
+<p>Decision Tree <script data-id="analytics_39" data-object-name="analytics_GvX2SQK8" data-viz="feature_importance_bar" data-analysis="GvX2SQK8" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_39" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div></p>
+<p>Random Forrest <script data-id="analytics_40" data-object-name="analytics_CqL0Omd7" data-viz="feature_importance_bar" data-analysis="CqL0Omd7" data-height="normal" data-width="normal" data-fit="" ></script><div data-id="analytics_40" style="width:100%; height:400px; display:table;margin-bottom:38px" class="viz-rendering-error viz-loading"><div style="width:100%; height:100%; display:table-cell; vertical-align:middle; text-align:center; font-size:14px; color:#999; background-color:white;font-family:sans-serif "><div>Loading... </div></div></div></p>
+<p>Gradient Boosted Tree <img src="libs/exploratory/images/p5.png" /></p>
+<p>All the models tell us that the same few factors are important. That is a good thing.</p>
 <hr />
 </div>
 </div>
 <div id="recommendations" class="section level1">
 <h1>Recommendations</h1>
+<p>To accomplish the goal of making changes to Falcon airlines to make our current customers happier here is what we should go with a low hanging fruit approach.</p>
+<p>Step 1: Take the top 10 or so important factors that we can actually do something about. They are:</p>
+<ul>
+<li>Seat comfort</li>
+<li>Inflight Entertainment</li>
+<li>Onboard Service</li>
+<li>Cleanliness</li>
+<li>Ease of onboarding</li>
+<li>Online boarding</li>
+<li>Online Support</li>
+<li>Checkin Service</li>
+<li>Baggage Handling</li>
+<li>Inflight Wifi Service</li>
+</ul>
+<p>Step 2: Estimate how much each one would cost to improve. For example, what would it cost to upgrade so that we are average compared to our competitors? What would the cost be to upgrade to become the best at this?</p>
+<p>Step 3: Spend the money that gets us the most bank for the buck, aka the higest expected ROI. If something is really important to our customers and its really cheap to do then we should do that first.</p>
+<p>This is a cost benefit analysis. We know the benefits of making our customers happier, the next step, if we choose to continue, is to figure out the costs.</p>
+<p>At that point its possible to make a decison.</p>
 <hr />
 </div>
 <div id="appendix" class="section level1">
